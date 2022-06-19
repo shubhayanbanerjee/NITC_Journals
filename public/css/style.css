@@ -1,5 +1,5 @@
 .backgroundimage { 
-    background: url("../images/background5.jpg") no-repeat center center fixed; 
+    background: url("../images/background6.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -22,7 +22,7 @@ p
     padding: 0.3% 3%;
     background-color: rgb(46, 38, 38);
     margin-bottom: 20px;
-    opacity: 95%;
+    opacity: 100%;
 }
 .navbar-brand
 {
