@@ -1,5 +1,5 @@
 .backgroundimage { 
-    background: url("../images/background4.png") no-repeat center center fixed; 
+    background: url("../images/background5.jpg") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -47,11 +47,11 @@ p
     border-radius: 14px;
     
 }
-.navbar-brand:hover
+/*.navbar-brand:hover
 {
     background-color: rgb(12, 9, 9);
     border-radius: 14px;
-}
+}*/
 
 
 
