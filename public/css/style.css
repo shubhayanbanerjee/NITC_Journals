@@ -233,6 +233,23 @@ section .section-title {
 }*/
 
 /*add edit div */
+
+
+/* Comment Section*/
+
+.commentsDiv
+{
+    margin: 2rem 0 4rem 1rem;
+    width: 60%;
+}
+
+.commentButton
+{
+    height: 20%;
+    width: 40%;
+    padding: 5px;
+}
+
 .mediaquerydiv
 {
     width: 60%;

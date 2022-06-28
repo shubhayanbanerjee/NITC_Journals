@@ -19,6 +19,14 @@ const ArticleSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
     },
+     comments : [{
+        text : String,
+        postedBy :
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+        }
+    }],
     createdAt: {
         type: Date,
         default: Date.now

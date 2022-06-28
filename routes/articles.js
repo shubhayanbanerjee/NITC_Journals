@@ -1,4 +1,5 @@
 const express = require("express")
+const { Mongoose } = require("mongoose")
 const router = express.Router()
 const{ ensureAuth} =require("../middleware/auth")
 
@@ -47,9 +48,9 @@ router.get("/",ensureAuth,async(req,res)=>
 
 // @desc    Show single article
 // @route   GET /article/:id
-router.get('/:id', ensureAuth, async (req, res) => {
+router.get(['/:id','/:id/comments'], ensureAuth, async (req, res) => {
   try {
-    let article = await Article.findById(req.params.id).populate('user').lean()
+    let article = await Article.findById(req.params.id).populate("user").lean()
 
     if (!article) {
       return res.render('error/404')
@@ -67,6 +68,38 @@ router.get('/:id', ensureAuth, async (req, res) => {
     res.render('error/404')
   }
 })
+
+//@desc      Show Comments in articles
+//@route     PUT /article/id/comments
+
+router.put('/:id/comments',ensureAuth, async (req,res) => 
+{
+  try {
+    let article = await Article.findById(req.params.id).lean()
+
+    if (!article) {
+      return res.render('error/404')
+    }
+
+      const comment = {
+        text : req.body.comment,
+        postedBy:req.user.id
+      }
+      article = await Article.findOneAndUpdate({ _id: req.params.id }, {$push:{comments:comment}}, {
+        new: true,
+        runValidators: true,
+      })
+      .populate('user')
+      .populate('comments.postedBy')
+      .lean()
+      res.render('articles/show',{article})
+  } catch (err) {
+    console.error(err)
+    return res.render('error/500')
+  }
+})
+
+
 
 
 // Show edit page
