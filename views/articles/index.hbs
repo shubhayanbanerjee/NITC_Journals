@@ -51,13 +51,13 @@
                                  </div>
                                 <div class="card-body text-center mt-4">
                                     <h4 class="card-title">{{title}}</h4>
-                                    <p class="card-text">{{stripTags (truncate body 150)}}</p>
+                                    <p class="card-text">{{stripTags (truncate body 100)}}</p>
                                 </div>
                                 <div class="card-body text-center" style="padding-bottom: 0px; margin-top:5px;">
-                                    <a href="/articles/{{_id}}" class="btn btn-primary" style="color: white; width:60%">Read More</a>
+                                    <a href="/articles/{{_id}}" class="btn btn-primary response" style="color: white; width:60%">Read More</a>
                                 </div>
                                 <div class="card-body text-center">
-                                     <a href="/articles/user/{{user._id}}" class="btn btn-success btn-sm" style="color: white;">More from {{user.displayName}}</a>
+                                     <a href="/articles/user/{{user._id}}" class="btn btn-success btn-sm response" style="color: white;">More from {{user.displayName}}</a>
                                 </div>
                             </div>
                         </div>

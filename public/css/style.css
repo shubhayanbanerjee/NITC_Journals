@@ -207,6 +207,7 @@ section .section-title {
     color: #0069D9 
 }
 
+
 .frontside .card .card-title,
 .backside .card .card-title {
     color: rgb(126, 120, 120) !important;
@@ -217,6 +218,19 @@ section .section-title {
     height: 120px;
     border-radius: 50%;
 }
+
+/*.backside .card .card-body
+{
+    font-size: 18px !important;
+}
+.backside .card .response
+{
+    font-size: 18px;
+}
+.backside .card .card-text
+{
+    font-size: 20px;
+}*/
 
 /*add edit div */
 .mediaquerydiv
@@ -234,3 +248,24 @@ section .section-title {
         width: unset;
     }
 }
+@media(max-width:1199px)
+{
+    .backside .card .response
+    {
+        font-size: 13px !important;
+    }
+    .backside .card .card-body
+    {
+        padding-bottom: 4px !important;
+        padding-top: 5px; 
+        margin: 0px;
+    }
+    .backside .card .card-text
+    {
+        font-size: 13px;
+    }
+    .backside .card
+    {
+        height: 300px;
+    }
+ }
