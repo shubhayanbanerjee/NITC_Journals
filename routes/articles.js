@@ -50,7 +50,7 @@ router.get("/",ensureAuth,async(req,res)=>
 // @route   GET /article/:id
 router.get(['/:id','/:id/comments'], ensureAuth, async (req, res) => {
   try {
-    let article = await Article.findById(req.params.id).populate("user").lean()
+    let article = await Article.findById(req.params.id).populate("user").populate('comments.postedBy').lean()
 
     if (!article) {
       return res.render('error/404')
